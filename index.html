@@ -1,47 +1,46 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Earthquakes in the past month</title>
-    <link href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.12/latin.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.12/latin.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
-</head>
-
-<body>
-    <h2>Earthquakes in the Past Month</h2>
-    <div id="map-container">
-        <div id="map"></div>
-
-        <div id="clock">
-         <span id="clock-text">Time</span> 
-                <!-- <input type="range" id="timeline-slider" min="0" max="0" step="1" value="0"> --> 
-
-            <!-- <p id="timeslider"></p> -->
-            <div id="button-container">
-                <!-- <button id="pauseButton">Pause</button>
-                <button id="resumeButton">Resume</button> -->
-            </div>
-        </div>
-        <button id="panToLargestButton">Pan to largest earthquake</button>
-        <div id="earthquakeInfo"></div>
-
-        
-
-
-    </div>
-   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="module" src="app.js"></script>
-</body>
-
+    <script type="module" src="app7.js"></script>
+  </head>
+  <body>
+    <h2>Earthquakes in the Past Month</h2>
+    <div id="map-container">
+      <div id="map"></div>
+      <div id="clock">
+        <span id="clock-text">Time</span>
+      </div>
+      <div id="button-container">
+        <button id="panToLargestButton">Pan to largest earthquake</button>
+      </div>
+      <div id="earthquakeInfo"></div>
+      <div id="backButtonContainer">
+        <button id="backButton">Back to Default View</button>
+      </div>
+    </div>
+  </body>
 </html>
