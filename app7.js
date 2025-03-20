@@ -2,8 +2,14 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import "https://cdn.jsdelivr.net/npm/leaflet@1.9.3/+esm";
 
 // Initialize the Leaflet map
-var map = L.map("map").setView([10, 0], 2.2);
-
+var map = L.map("map", {
+  center: [10, 0],
+  zoom: 2.4, // Try values between 2.1 and 2.4
+  worldCopyJump: true,
+  maxBoundsViscosity: 1.0,
+  minZoom: 2,
+  zoomSnap: 0.1, // Allows for finer zoom adjustments
+});
 // Modify it to include the noWrap: true option:
 L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
   attribution:
@@ -79,7 +85,7 @@ function addEarthquakeMarker(index) {
     circle.addTo(earthquakeMarkers);
 
     // Update the clock text
-    clockText.textContent = "Earthquake Time: " + dayTime;
+    clockText.textContent = "Time: " + dayTime;
 
     currentIndex++;
 
@@ -160,7 +166,7 @@ backButton.addEventListener("click", function () {
   panToLargestButton.style.display = "block";
 
   // Set the map back to the default view
-  map.setView([0, 0], 2); // Default zoom level and position
+  map.setView([0, 0], 2.2); // Default zoom level and position
 
   // Reset the clock and earthquake info
   clockText.textContent = "Time";

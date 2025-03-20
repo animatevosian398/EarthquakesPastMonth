@@ -42,8 +42,7 @@ h2 {
 
 #map {
   width: 100%;
-  max-width: 1000px; /* Keep your max-width setting */
-  height: 85vh;
+  height: 80vh;
   margin: 0 auto; /* Auto margins for horizontal centering */
   border: 2px solid #bfbbbb;
   border-radius: 4px;
@@ -204,4 +203,73 @@ button:hover {
 
 #backButtonContainer {
   margin-top: 15px;
+}
+/* Option 2: Remove borders and adjust container styling */
+#map-container {
+  padding: 0;
+  padding-top: 30px;
+  height: 80vh; /* Reduced from 85vh */
+  width: 100vw;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+#map {
+  width: 100%;
+  height: 75vh; /* Reduced from 85vh */
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Adjust heading to align with no padding */
+h2 {
+  margin-left: 16px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/* Reposition controls to work with edge-to-edge map */
+#button-container {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 5px;
+  border-radius: 4px;
+}
+
+#clock {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin: 0;
+}
+
+#earthquakeInfo {
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  z-index: 1000;
+  max-width: 400px;
+}
+
+#backButtonContainer {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  z-index: 1001;
 }
