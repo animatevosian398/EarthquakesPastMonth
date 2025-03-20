@@ -2,16 +2,16 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import "https://cdn.jsdelivr.net/npm/leaflet@1.9.3/+esm";
 
 // Initialize the Leaflet map
-var map = L.map("map").setView([0, 0], 2);
+var map = L.map("map").setView([10, 0], 2.2);
 
-// Add a tile layer
+// Modify it to include the noWrap: true option:
 L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
   attribution:
     'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
   subdomains: "abcd",
   maxZoom: 19,
+  noWrap: true, // Prevents the map from repeating/wrapping horizontally
 }).addTo(map);
-
 // Layer group for earthquake markers
 var earthquakeMarkers = L.layerGroup().addTo(map);
 
@@ -96,6 +96,8 @@ function addEarthquakeMarker(index) {
 
 // Event listener for the "Pan to Largest Earthquake" button
 panToLargestButton.addEventListener("click", function () {
+  panToLargestButton.style.display = "none";
+
   if (!earthquakesLoaded) {
     earthquakeInfoDiv.innerHTML = `<p class="loading-text">Waiting for earthquake data to load...</p>`;
     return;
@@ -155,6 +157,8 @@ panToLargestButton.addEventListener("click", function () {
 
 // Event listener for the "Back to Default View" button
 backButton.addEventListener("click", function () {
+  panToLargestButton.style.display = "block";
+
   // Set the map back to the default view
   map.setView([0, 0], 2); // Default zoom level and position
 
