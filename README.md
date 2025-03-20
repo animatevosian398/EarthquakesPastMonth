@@ -1,6 +1,6 @@
 # 🌎 Real-time Earthquake Tracker
 
-![Earthquake Map Screenshot](EQPast_Month_Screenshot)
+![Earthquake Map Screenshot](/EQPast_Month_Screenshot.png)
 
 ## Overview
 
